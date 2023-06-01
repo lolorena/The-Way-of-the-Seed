@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5975919715402847363}
   - component: {fileID: 6298566533249102243}
   - component: {fileID: 6280327680669534748}
-  - component: {fileID: 3611561424897931870}
+  - component: {fileID: -7466782706534936457}
   m_Layer: 1
   m_Name: SphereAmarilla
   m_TagString: Untagged
@@ -62,7 +62,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &3611561424897931870
+--- !u!114 &-7466782706534936457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,6 +71,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 841483752682838605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba606c1e4b8066d479f90d4b0487e5da, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c6f675f56dc13842895ddcb07600e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -5,8 +5,8 @@ using UnityEngine;
 public class audioManager : MonoBehaviour
 {
     public AudioClip bandaSonora;
-    public AudioClip efectoDespertar;
-    public AudioClip efectoMandarUbi;
+    public AudioClip sonidoDespertar;
+    public AudioClip sonidoMandarUbi;
     private AudioSource hiloMusical;
     void Start()
     {

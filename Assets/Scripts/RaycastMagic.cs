@@ -25,7 +25,12 @@ public class RaycastMagic : MonoBehaviour
     bool disparando = false;
     public float radioEsfera;
 
-    
+    public GameObject gestorSonido; 
+
+    void Setup()
+    {
+        gestorSonido = GameObject.Find("AudioManager");
+    }
 
     void Awake() 
     {
@@ -59,12 +64,14 @@ public class RaycastMagic : MonoBehaviour
 
         if(Input.GetMouseButtonDown(1) && disparando == false) //el 1 es el boton derecho del mouse, el 0 es el izquierdo y el 2 es la rueda
         {
+
             ray = camera.ScreenPointToRay(Input.mousePosition); //crea un rayo desde la camara hasta la posicion del mouse
             if(Physics.Raycast(ray, out hit))
             {
                 hitPosition = hit.point; //guarda la posicion del rayo en una variable
                 Debug.DrawLine(transform.position, hit.point, Color.red); //dibuja una linea roja desde la posicion del jugador hasta la posicion del rayo
             }
+
         }
 
         if(Input.GetMouseButtonUp(1) && disparando == false)
@@ -72,6 +79,9 @@ public class RaycastMagic : MonoBehaviour
             disparando = true; //activa la bool de disparo
             proyectil.transform.position = transform.position; //coloca el proyectil en la posicion del jugador
             proyectil.SetActive(true); //activa el prefab del proyectil
+
+            this.GetComponentInParent<AudioSource>().PlayOneShot(gestorSonido.GetComponent<audioManager>().sonidoDespertar, 1f);
+
         }
 
         proyectil.transform.position = Vector3.MoveTowards(proyectil.transform.position, hitPosition, 10f * Time.deltaTime); //mueve el proyectil hacia la posicion del rayo desde la mano
@@ -142,10 +152,10 @@ public class RaycastMagic : MonoBehaviour
             disparando = true; //activa la bool de disparo
             proyectilAmarillo.transform.position = transform.position; //coloca el proyectil en la posicion del jugador
             proyectilAmarillo.SetActive(true); //activa el prefab del proyectil
+
+            this.GetComponentInParent<AudioSource>().PlayOneShot(gestorSonido.GetComponent<audioManager>().sonidoMandarUbi, 1f);
+
         }
-
-
-
 
     }
 
